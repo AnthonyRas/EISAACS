@@ -52,3 +52,5 @@ To replicate the evolution of configurations towards a target point, run
 source("get_new_configurations.R")
 ```
 Note that Tensorflow may introduce slight variations to the projections, dependent on computer hardware. For exact replication, replace the contents of "Data" with that of "DataBeforeNewConfigurations".
+# Troubleshooting
+This was tested on Windows and macOS, using R version 4.3.2 with Python 3.10.11 via the 'reticulate' package.
