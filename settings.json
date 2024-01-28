@@ -1,0 +1,9 @@
+{
+    "direction" : "min",
+    "train" : {
+        "layer_size" : 64,
+        "batch_size" : 32,
+        "epochs" : 20,
+        "loss_weights" : [10, 1, 0]
+    }
+}
