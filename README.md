@@ -53,4 +53,10 @@ source("get_new_configurations.R")
 ```
 Note that Tensorflow may introduce slight variations to the projections, dependent on computer hardware. For exact replication, replace the contents of "Data" with that of "DataBeforeNewConfigurations".
 # Troubleshooting
-This was tested on Windows and macOS, using R version 4.3.2 with Python 3.10.11 via the 'reticulate' package.
+This was tested on Windows and macOS, using R version 4.3.2 with Python 3.10.11 via the 'reticulate' package. If there are issues installing Tensorflow/Keras, Python 3.10 may work:
+```
+reticulate::install_python("3.10:latest")
+library(keras)
+install_keras()
+```
+If issues persist, try updating R.
