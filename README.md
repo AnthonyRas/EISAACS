@@ -2,7 +2,7 @@
 The "Data" folder contains an example with pre-trained models, using synthetic metadata. To use the dashboard for exploring the projected spaces, run
 ```
 library(shiny)
-runApp("main.R")
+runApp("app.R")
 ```
 # Generating Synthetic Metadata
 To generate synthetic metadata, run
