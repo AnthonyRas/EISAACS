@@ -139,7 +139,7 @@ ui <- fluidPage(
                        selectInput("parameter", "Configuration Parameter",
                                    choices = gsub("parameter_", "", colnames(cd)))),
       selectInput("sidebarplotchoice", "Sidebar Tool",
-                  choices = c("Parallel Coordinates", "Configuration Projector")),
+                  choices = c("Configuration Projector", "Parallel Coordinates")),
       conditionalPanel("input.sidebarplotchoice == 'Parallel Coordinates'",
                        plotlyOutput("parcoordsI", height = "27vh"),
                        plotlyOutput("parcoordsC", height = "27vh")
