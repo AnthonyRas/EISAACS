@@ -60,3 +60,5 @@ library(keras)
 install_keras()
 ```
 If issues persist, try updating R.
+
+Running "app.R" with the data from "DataBeforeNewConfigurations" after using the data initially in the folder "Data", in the same R session, can cause issues with the plots. To solve this, restart the R session (this will be fixed in a later version).
