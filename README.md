@@ -5,12 +5,12 @@ library(shiny)
 runApp("app.R")
 ```
 # Generating Synthetic Metadata
-To generate synthetic metadata, run
+Before generating new synthetic metadata, ensure that "Data" is clear and that the working directory is the project directory. To generate synthetic metadata, run
 ```
 source("run_generate_synthetic_experiments.R")
 ```
-# Model Training
-To train the projection models, first place CSV files of the following names into the "Data" folder:
+# Input Metadata
+This step is not necessary if synthetic metadata has been generated. To train the projection models, first place CSV files of the following names into the "Data" folder:
 - **feature_matrix.csv** $~$ The first column has the IDs of problem instances and its remaining columns have the values of instance features. An example:
 ```
 "","F1","F2","F3","F4"
@@ -41,11 +41,11 @@ To train the projection models, first place CSV files of the following names int
 "C1","-0.35 F1 + -0.49 F2 <br>+ 0.94 F3 + -1.06 F4"
 "C2","-0.35 F1 + -0.49 F2 <br>+ 0.94 F3 + -1.06 F4"
 ```
-Next, ensure that the working directory is the project directory, and then run
+# Model Training
+To preprocess the metadata, train the models, and to save, in "Data", what is necessary for the analysis, run
 ```
 source("run_initialise.R")
 ```
-to preprocess the metadata, train the models, and to save, in "Data", what is necessary for the analysis.
 # Evolving New Configurations at a Target Point
 To replicate the evolution of configurations towards a target point, run
 ```
@@ -53,7 +53,7 @@ source("get_new_configurations.R")
 ```
 Note that Tensorflow may introduce slight variations to the projections, dependent on computer hardware. For exact replication, replace the contents of "Data" with that of "DataBeforeNewConfigurations".
 # Troubleshooting
-This was tested on Windows and macOS, using R version 4.3.2 with Python 3.10.11 via the 'reticulate' package. If there are issues installing Tensorflow/Keras, Python 3.10 may work:
+This was tested on macOS and Windows, using R version 4.3.2 with Python 3.10.11 via the 'reticulate' package. If there are issues installing Tensorflow/Keras, Python 3.10 may work:
 ```
 reticulate::install_python("3.10:latest")
 library(keras)
